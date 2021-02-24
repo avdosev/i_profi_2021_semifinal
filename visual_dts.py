@@ -7,12 +7,10 @@ test = pd.read_csv('./data/test.csv')
 
 p = np.zeros((300, 1000))
 
-for i in range(len(train)):
-    point = train.loc[i]
+for i, point in train.iterrows():
     p[point.X, point.Y] = 1
 
-for i in range(len(test)):
-    point = test.loc[i]
+for i, point in test.iterrows():
     p[point.X, point.Y] = 3
 
 plt.imshow(p[201:247, 901:930])
