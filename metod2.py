@@ -31,13 +31,21 @@ x_grid = np.linspace(x_left, x_left+size_x, size_x)
 y_grid = np.linspace(y_left, y_left+size_y, size_y)
 B1, B2 = np.meshgrid(x_grid, y_grid, indexing='xy')
 
-
-spline = sp.interpolate.Rbf(X.X,X.Y,y,function='thin_plate',smooth=5, episilon=5)
+# 25 фев 2021, 14:23:28
+spline = sp.interpolate.Rbf(X.X,X.Y,y,function='linear',smooth=5, episilon=5)
 res = spline(B1, B2)
 plt.imshow(res)
 plt.savefig('data_visual_2.png')
-save_res(res, 'rbf')
+save_res(res, 'rbf_linear')
 
+# 25 фев 2021, 14:24:34
+spline = sp.interpolate.Rbf(X.X,X.Y,y,function='multiquadric',smooth=5, episilon=5)
+res = spline(B1, B2)
+plt.imshow(res)
+plt.savefig('data_visual_2_multiquadric.png')
+save_res(res, 'rbf_multiquadric')
+
+# 25 фев 2021, 14:15:50
 interp = sp.interpolate.NearestNDInterpolator(list(zip(X.X,X.Y)), y)
 res = interp(B1, B2)
 plt.imshow(res)
