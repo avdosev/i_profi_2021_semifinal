@@ -32,7 +32,7 @@ models = [
     (LinearRegression(), 'linear'),
     (make_pipeline(PolynomialFeatures(2), LinearRegression()), 'polinom 2 linear'),
     (make_pipeline(PolynomialFeatures(3), LinearRegression()), 'polinom 3 linear'),
-    (make_pipeline(PolynomialFeatures(4), LinearRegression()), 'polinom 4 linear'), # 4
+    (make_pipeline(PolynomialFeatures(4), LinearRegression()), 'polinom 4 linear'), # 4 15:26
     (make_pipeline(PolynomialFeatures(5), LinearRegression()), 'polinom 5 linear'),
     (make_pipeline(PolynomialFeatures(6), LinearRegression()), 'polinom 6 linear'),
     (make_pipeline(PolynomialFeatures(7), LinearRegression()), 'polinom 7 linear'),
@@ -47,7 +47,7 @@ models = [
     (make_pipeline(PolynomialFeatures(6), ExtraTreesRegressor(n_jobs=-1,)), 'polinom 6 extra_trees'),
     (make_pipeline(PolynomialFeatures(8), ExtraTreesRegressor(n_jobs=-1,)), 'polinom 8 extra_trees'),
     (make_pipeline(PolynomialFeatures(10), ExtraTreesRegressor(n_jobs=-1,)), 'polinom 10 extra_trees'),
-    (ExtraTreesRegressor(n_jobs=-1, max_depth=5), 'extra_trees max_d=5'), # 3
+    (ExtraTreesRegressor(n_jobs=-1, max_depth=5), 'extra_trees max_d=5'), # 3 15:23
     (ExtraTreesRegressor(n_jobs=-1, max_depth=10), 'extra_trees max_d=10'),
     (GradientBoostingRegressor(), 'grad_boosting'),
     (make_pipeline(PolynomialFeatures(2), GradientBoostingRegressor()), 'polinom 2 grad_boosting'),
@@ -61,11 +61,11 @@ models = [
     (RandomForestRegressor(n_estimators=2, n_jobs=-1), 'rand_forset n_est=2'),
     (DecisionTreeRegressor(), 'tree'),
     (make_pipeline(PolynomialFeatures(4), DecisionTreeRegressor()), 'polinom 4 tree'),
-    (KNeighborsRegressor(n_neighbors=2, weights='distance'), 'neighbors 2 distance'), # 2 
+    (KNeighborsRegressor(n_neighbors=2, weights='distance'), 'neighbors 2 distance'), # 2 13:54
     (KNeighborsRegressor(n_neighbors=5, weights='distance'), 'neighbors 5 distance'),
     (KNeighborsRegressor(n_neighbors=6, weights='distance'), 'neighbors 6 distance'),
     (KNeighborsRegressor(n_neighbors=7, weights='distance'), 'neighbors 7 distance'),
-    (KNeighborsRegressor(n_neighbors=8, weights='distance'), 'neighbors 8 distance'), # 1
+    (KNeighborsRegressor(n_neighbors=8, weights='distance'), 'neighbors 8 distance'), # 1  13:53:
     (KNeighborsRegressor(n_neighbors=9, weights='distance'), 'neighbors 9 distance'),
     (KNeighborsRegressor(n_neighbors=10, weights='distance'), 'neighbors 10 distance'), # 5 15:26
     (KNeighborsRegressor(n_neighbors=15, weights='distance'), 'neighbors 15 distance'),
