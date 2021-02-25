@@ -48,6 +48,7 @@ models = [
     (make_pipeline(PolynomialFeatures(8), ExtraTreesRegressor(n_jobs=-1,)), 'polinom 8 extra_trees'),
     (make_pipeline(PolynomialFeatures(10), ExtraTreesRegressor(n_jobs=-1,)), 'polinom 10 extra_trees'),
     (ExtraTreesRegressor(n_jobs=-1, max_depth=5), 'extra_trees max_d=5'), # 3 15:23
+    # (ExtraTreesRegressor(n_jobs=-1, max_depth=5, n_estimators=200), 'extra_trees max_d=5 n_est=200'), 
     (ExtraTreesRegressor(n_jobs=-1, max_depth=10), 'extra_trees max_d=10'),
     (GradientBoostingRegressor(), 'grad_boosting'),
     (make_pipeline(PolynomialFeatures(2), GradientBoostingRegressor()), 'polinom 2 grad_boosting'),
@@ -61,7 +62,7 @@ models = [
     (RandomForestRegressor(n_estimators=2, n_jobs=-1), 'rand_forset n_est=2'),
     (DecisionTreeRegressor(), 'tree'),
     (make_pipeline(PolynomialFeatures(4), DecisionTreeRegressor()), 'polinom 4 tree'),
-    (KNeighborsRegressor(n_neighbors=2, weights='distance'), 'neighbors 2 distance'), # 2 13:54
+    (KNeighborsRegressor(n_neighbors=2, weights='distance'), 'neighbors 2 distance'), # 2 13:54 и 25 фев 2021, 20:50:41
     (KNeighborsRegressor(n_neighbors=5, weights='distance'), 'neighbors 5 distance'),
     (KNeighborsRegressor(n_neighbors=6, weights='distance'), 'neighbors 6 distance'),
     (KNeighborsRegressor(n_neighbors=7, weights='distance'), 'neighbors 7 distance'),
