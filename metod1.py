@@ -68,7 +68,7 @@ models = [
     (KNeighborsRegressor(n_neighbors=8, weights='distance'), 'neighbors 8 distance'), # 1  13:53:
     (KNeighborsRegressor(n_neighbors=9, weights='distance'), 'neighbors 9 distance'),
     (KNeighborsRegressor(n_neighbors=10, weights='distance'), 'neighbors 10 distance'), # 5 15:26
-    (KNeighborsRegressor(n_neighbors=15, weights='distance'), 'neighbors 15 distance'),
+    (KNeighborsRegressor(n_neighbors=15, weights='distance'), 'neighbors 15 distance'), # 25 фев 2021, 20:25:52
     (KNeighborsRegressor(n_neighbors=20, weights='distance'), 'neighbors 20 distance'),
     (CatBoostRegressor(silent=True, iterations=900), 'cat boost reg'), # 6 15:27
 ]
