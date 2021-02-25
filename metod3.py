@@ -1,4 +1,7 @@
 # 25 фев 2021, 13:46:43
+# metod3_2 14:06
+# metod3_3 14:07
+# metod3_4 14:08
 
 import pandas as pd
 import numpy as np
