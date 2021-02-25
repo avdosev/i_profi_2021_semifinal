@@ -1,3 +1,5 @@
+# 25 фев 2021, 13:46:43
+
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -42,7 +44,9 @@ res = np.full((size_x, size_y), -1.)
 for i, point in train.iterrows():
     x, y = point.X-x_left, point.Y-y_left
     for x_r, y_r in iter_radius(x, y, 1):
-        points = [arr[x_p, y_p] for x_p, y_p in iter_radius(x_r, y_r, 3) if arr[x_p, y_p] != -1]
+        if res[x_r, y_r] != -1:
+            continue
+        points = [arr[x_p, y_p] for x_p, y_p in iter_radius(x_r, y_r, 4) if arr[x_p, y_p] != -1]
         # print(points)
         avg = sum(points) / len(points)
         res[x_r, y_r] = avg
@@ -51,6 +55,7 @@ for i, point in train.iterrows():
 plt.imshow(res)
 plt.show()
 
+res2 = np.copy(res)
 for y in range(size_y):
     for x in range(size_x):
         if res[x, y] == -1:
@@ -60,5 +65,24 @@ for y in range(size_y):
 
 plt.imshow(res)
 plt.savefig('data_visual_6.png')
-plt.show()        
+# plt.show()
+
+for x in range(size_x):
+    for y in range(size_y):
+        if res2[x, y] == -1:
+            points = [res2[x_p, y_p] for x_p, y_p in iter_radius(x, y, 1) if res2[x_p, y_p] != -1]
+            avg = sum(points) / len(points)
+            res2[x, y] = avg
+
+plt.imshow(res2)
+plt.savefig('data_visual_7.png')
+# plt.show()
+
 save_res(res, 'metod3')
+save_res(res2, 'metod3.2')
+
+res3 = (res + res2) / 2
+plt.imshow(res3)
+plt.savefig('data_visual_8.png')
+
+save_res(res3, 'metod3.3_4')
